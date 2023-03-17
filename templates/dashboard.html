@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Plotly.js library -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+  
+<body>
+    <div class="container col-9">
+        <h1 class="mt-5 mb-4 text-center">Durban University of Technology<br/> Dashboard</h1>
+        
+        <div class="row">
+            <!-- Enrollment chart -->
+            <div class="col-md-6 mb-4">
+                <h2 class="mb-3">Tutor Enrollment by Year</h2>
+                <div id="enrollment-chart"></div>
+            </div>
+            
+            <!-- Faculty table -->
+            <div class="col-md-6 mb-4">
+                <h2 class="mb-3">Faculty Members by Department</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Department</th>
+                            <th>Faculty Members</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Accounting and Informatics</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Engineering and the Built Environment</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Applied Sciences</td>
+                            <td>10</td>
+                        </tr>
+                      <tr>
+                            <td>Arts & Design</td>
+                            <td>24</td>
+                        </tr>
+                      <tr>
+                            <td>Health Sciences</td>
+                            <td>19</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Research funding chart -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mb-3">Research Funding by Year</h2>
+                <div id="research-chart"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <style>
+        /* Style the enrollment chart div */
+        #enrollment-chart {
+            height: 400px;
+        }
+        
+        /* Style the research funding chart div */
+        #research-chart {
+            height: 400px;
+        }
+    </style>
+    
+    <script>
+        // JavaScript code to create the enrollment chart
+        var enrollment_data = [{
+            x: [2019, 2020, 2021, 2022],
+            y: [500, 600, 700, 800],
+            type: 'bar'
+        }];
+        Plotly.newPlot('enrollment-chart', enrollment_data);
+        
+        // JavaScript code to create the research funding chart
+        var research_data = [{
+            x: [2019, 2020, 2021, 2022],
+            y: [10000, 15000, 20000, 25000],
+            type: 'scatter',
+            mode: 'lines+markers'
+        }];
+        Plotly.newPlot('research-chart', research_data);
+    </script>
+</body>
+</html>
