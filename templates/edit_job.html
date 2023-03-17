@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ "Add Job" if job is none else "Edit Job" }}</h1>
+  <form method="POST" action="/admin/edit_job">
+    <input type="hidden" name="id" value="{{ job.id if job is not none else '' }}">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" value="{{ job.title if job is not none else '' }}">
+    <br>
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" value="{{ job.location if job is not none else '' }}">
+    <br>
+    <label for="salary">Salary:</label>
+    <input type="text" name="salary" id="salary" value="{{ job.salary if job is not none else '' }}">
+    <br>
+    <input type="submit" value="{{ 'Save' if job is not none else 'Add Job' }}">
+  </form>
+{% endblock %}

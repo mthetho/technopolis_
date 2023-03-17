@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home_page') }}">Home</a></li>
+          
+          <li><a href="{{ url_for('documents_page') }}">Documents</a></li>
+          {% if admin %}
+            <li><a href="{{ url_for('admin_page') }}">Admin</a></li>
+          {% endif %}
+          <li><a href="{{ url_for('login_page') }}">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>&copy; {{ company_name }} 2023</p>
+    </footer>
+  </body>
+</html>
